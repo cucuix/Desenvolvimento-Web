@@ -1,7 +1,6 @@
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
-import {Navbar} from './components/Mavbar';
+import {Navbar} from './components/Navbar';
 import {Sobre} from './pages/Sobre';
-import {};
 import {Home} from './pages/Home';
 //Rotas no React: meacnismo para navegação entre diferentes páginas ou componentes em uma aplicação de página única (SPA)
 
@@ -10,6 +9,13 @@ function App() {
   return (
     <BrowserRouter>
      <Navbar/>
+
+     <main style={{padding: '2px'}}>
+      <Routes>
+        <Route path= '/' element={<Home/>}></Route>
+        <Route path= '/sobre' element={<Sobre/>}></Route>
+      </Routes>
+     </main>
     </BrowserRouter>
   );
 }
